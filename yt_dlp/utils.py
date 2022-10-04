@@ -5,6 +5,7 @@ import binascii
 import calendar
 import codecs
 import collections
+import collections.abc
 import contextlib
 import datetime
 import email.header
@@ -75,44 +76,44 @@ compiled_regex_type = type(re.compile(''))
 def random_user_agent():
     _USER_AGENT_TPL = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/%s Safari/537.36'
     _CHROME_VERSIONS = (
-        '90.0.4430.212',
-        '90.0.4430.24',
-        '90.0.4430.70',
-        '90.0.4430.72',
-        '90.0.4430.85',
-        '90.0.4430.93',
-        '91.0.4472.101',
-        '91.0.4472.106',
-        '91.0.4472.114',
-        '91.0.4472.124',
-        '91.0.4472.164',
-        '91.0.4472.19',
-        '91.0.4472.77',
-        '92.0.4515.107',
-        '92.0.4515.115',
-        '92.0.4515.131',
-        '92.0.4515.159',
-        '92.0.4515.43',
-        '93.0.4556.0',
-        '93.0.4577.15',
-        '93.0.4577.63',
-        '93.0.4577.82',
-        '94.0.4606.41',
-        '94.0.4606.54',
-        '94.0.4606.61',
-        '94.0.4606.71',
-        '94.0.4606.81',
-        '94.0.4606.85',
-        '95.0.4638.17',
-        '95.0.4638.50',
-        '95.0.4638.54',
-        '95.0.4638.69',
-        '95.0.4638.74',
-        '96.0.4664.18',
-        '96.0.4664.45',
-        '96.0.4664.55',
-        '96.0.4664.93',
-        '97.0.4692.20',
+        '103.0.5060.13',
+        '103.0.5060.130',
+        '103.0.5060.131',
+        '103.0.5060.132',
+        '103.0.5060.133',
+        '103.0.5060.134',
+        '103.0.5060.135',
+        '103.0.5060.136',
+        '103.0.5060.137',
+        '103.0.5060.138',
+        '103.0.5060.139',
+        '103.0.5060.14',
+        '103.0.5060.140',
+        '103.0.5060.141',
+        '103.0.5060.142',
+        '104.0.5112.127',
+        '104.0.5112.128',
+        '104.0.5112.129',
+        '104.0.5112.93',
+        '104.0.5112.94',
+        '104.0.5112.95',
+        '104.0.5112.96',
+        '104.0.5112.97',
+        '104.0.5112.98',
+        '104.0.5112.99',
+        '105.0.5195.145',
+        '105.0.5195.146',
+        '105.0.5195.147',
+        '105.0.5195.94',
+        '105.0.5195.95',
+        '105.0.5195.96',
+        '105.0.5195.97',
+        '105.0.5195.98',
+        '105.0.5195.99',
+        '105.0.5195.127',  # Current chrome version on Win10x64
+        '106.0.5196.0',
+        '106.0.5196.1',
+        '106.0.5197.0',
     )
     return _USER_AGENT_TPL % random.choice(_CHROME_VERSIONS)
 
@@ -231,7 +232,7 @@ DATE_FORMATS_MONTH_FIRST.extend([
 ])
 
 PACKED_CODES_RE = r"}\('(.+)',(\d+),(\d+),'([^']+)'\.split\('\|'\)"
-JSON_LD_RE = r'(?is)<script[^>]+type=(["\']?)application/ld\+json\1[^>]*>\s*(?P<json_ld>{.+?})\s*</script>'
+JSON_LD_RE = r'(?is)<script[^>]+type=(["\']?)application/ld\+json\1[^>]*>\s*(?P<json_ld>{.+?}|\[.+?\])\s*</script>'
 
 NUMBER_RE = r'\d+(?:\.\d+)?'
 
@@ -591,9 +592,14 @@ class LenientJSONDecoder(json.JSONDecoder):
     def decode(self, s):
         if self.transform_source:
             s = self.transform_source(s)
-        if self.ignore_extra:
-            return self.raw_decode(s.lstrip())[0]
-        return super().decode(s)
+        try:
+            if self.ignore_extra:
+                return self.raw_decode(s.lstrip())[0]
+            return super().decode(s)
+        except json.JSONDecodeError as e:
+            if e.pos is not None:
+                raise type(e)(f'{e.msg} in {s[e.pos-10:e.pos+10]!r}', s, e.pos)
+            raise
 
 
 def sanitize_open(filename, open_mode):
@@ -762,7 +768,7 @@ def sanitized_Request(url, *args, **kwargs):
 
 
 def expand_path(s):
-    """Expand $ shell variables and ~"""
+    """Expand shell variables and ~"""
     return os.path.expandvars(compat_expanduser(s))
 
 
@@ -885,8 +891,9 @@ class Popen(subprocess.Popen):
     @classmethod
     def run(cls, *args, timeout=None, **kwargs):
         with cls(*args, **kwargs) as proc:
+            default = '' if proc.text_mode else b''
             stdout, stderr = proc.communicate_or_kill(timeout=timeout)
-            return stdout or '', stderr or '', proc.returncode
+            return stdout or default, stderr or default, proc.returncode
 
 
 def get_subprocess_encoding():
@@ -3184,7 +3191,7 @@ def try_call(*funcs, expected_type=None, args=[], kwargs={}):
     for f in funcs:
         try:
             val = f(*args, **kwargs)
-        except (AttributeError, KeyError, TypeError, IndexError, ZeroDivisionError):
+        except (AttributeError, KeyError, TypeError, IndexError, ValueError, ZeroDivisionError):
             pass
         else:
             if expected_type is None or isinstance(val, expected_type):
@@ -3293,7 +3300,7 @@ def js_to_json(code, vars={}, *, strict=False):
                     return '"%d":' % i if v.endswith(':') else '%d' % i
 
             if v in vars:
-                return vars[v]
+                return json.dumps(vars[v])
             if strict:
                 raise ValueError(f'Unknown value: {v}')
 
@@ -3305,6 +3312,7 @@ def js_to_json(code, vars={}, *, strict=False):
     code = re.sub(r'new Map\((\[.*?\])?\)', create_map, code)
     if not strict:
         code = re.sub(r'new Date\((".+")\)', r'\g<1>', code)
+        code = re.sub(r'new \w+\((.*?)\)', lambda m: json.dumps(m.group(0)), code)
 
     return re.sub(r'''(?sx)
         "(?:[^"\\]*(?:\\\\|\\['"nurtbfx/\n]))*[^"\\]*"|
@@ -3538,7 +3546,7 @@ def get_compatible_ext(*, vcodecs, acodecs, vexts, aexts, preferences=None):
     COMPATIBLE_CODECS = {
         'mp4': {
             'av1', 'hevc', 'avc1', 'mp4a',  # fourcc (m3u8, mpd)
-            'h264', 'aacl',  # Set in ISM
+            'h264', 'aacl', 'ec-3',  # Set in ISM
         },
         'webm': {
             'av1', 'vp9', 'vp8', 'opus', 'vrbs',
@@ -3785,6 +3793,9 @@ class download_range_func:
         self.chapters, self.ranges = chapters, ranges
 
     def __call__(self, info_dict, ydl):
+        if not self.ranges and not self.chapters:
+            yield {}
+
         warning = ('There are no chapters matching the regex' if info_dict.get('chapters')
                    else 'Cannot match chapters since chapter information is unavailable')
         for regex in self.chapters or []:
@@ -5279,107 +5290,149 @@ def load_plugins(name, suffix, namespace):
 
 
 def traverse_obj(
-        obj, *path_list, default=None, expected_type=None, get_all=True,
+        obj, *paths, default=None, expected_type=None, get_all=True,
         casesense=True, is_user_input=False, traverse_string=False):
-    ''' Traverse nested list/dict/tuple
-    @param path_list        A list of paths which are checked one by one.
-                            Each path is a list of keys where each key is a:
-                              - None:     Do nothing
-                              - string:   A dictionary key / regex group
-                              - int:      An index into a list
-                              - tuple:    A list of keys all of which will be traversed
-                              - Ellipsis: Fetch all values in the object
-                              - Function: Takes the key and value as arguments
-                                          and returns whether the key matches or not
-    @param default          Default value to return
-    @param expected_type    Only accept final value of this type (Can also be any callable)
-    @param get_all          Return all the values obtained from a path or only the first one
-    @param casesense        Whether to consider dictionary keys as case sensitive
+    """
+    Safely traverse nested `dict`s and `Sequence`s
 
-    The following are only meant to be used by YoutubeDL.prepare_outtmpl and is not part of the API
+    >>> obj = [{}, {"key": "value"}]
+    >>> traverse_obj(obj, (1, "key"))
+    "value"
 
-    @param path_list        In addition to the above,
-                              - dict:     Given {k:v, ...}; return {k: traverse_obj(obj, v), ...}
-    @param is_user_input    Whether the keys are generated from user input. If True,
-                            strings are converted to int/slice if necessary
-    @param traverse_string  Whether to traverse inside strings. If True, any
-                            non-compatible object will also be converted into a string
-    '''  # TODO: Write tests
-    if not casesense:
-        _lower = lambda k: (k.lower() if isinstance(k, str) else k)
-        path_list = (map(_lower, variadic(path)) for path in path_list)
+    Each of the provided `paths` is tested and the first producing a valid result will be returned.
+    A value of None is treated as the absence of a value.
 
-    def _traverse_obj(obj, path, _current_depth=0):
-        nonlocal depth
-        path = tuple(variadic(path))
-        for i, key in enumerate(path):
-            if None in (key, obj):
-                return obj
-            if isinstance(key, (list, tuple)):
-                obj = [_traverse_obj(obj, sub_key, _current_depth) for sub_key in key]
-                key = ...
+    The paths will be wrapped in `variadic`, so that `'key'` is conveniently the same as `('key', )`.
 
-            if key is ...:
-                obj = (obj.values() if isinstance(obj, dict)
-                       else obj if isinstance(obj, (list, tuple, LazyList))
-                       else str(obj) if traverse_string else [])
-                _current_depth += 1
-                depth = max(depth, _current_depth)
-                return [_traverse_obj(inner_obj, path[i + 1:], _current_depth) for inner_obj in obj]
-            elif isinstance(key, dict):
-                obj = filter_dict({k: _traverse_obj(obj, v, _current_depth) for k, v in key.items()})
-            elif callable(key):
-                if isinstance(obj, (list, tuple, LazyList)):
-                    obj = enumerate(obj)
-                elif isinstance(obj, dict):
-                    obj = obj.items()
-                else:
-                    if not traverse_string:
-                        return None
-                    obj = str(obj)
-                _current_depth += 1
-                depth = max(depth, _current_depth)
-                return [_traverse_obj(v, path[i + 1:], _current_depth) for k, v in obj if try_call(key, args=(k, v))]
-            elif isinstance(obj, dict) and not (is_user_input and key == ':'):
-                obj = (obj.get(key) if casesense or (key in obj)
-                       else next((v for k, v in obj.items() if _lower(k) == key), None))
-            else:
-                if is_user_input:
-                    key = (int_or_none(key) if ':' not in key
-                           else slice(*map(int_or_none, key.split(':'))))
-                    if key == slice(None):
-                        return _traverse_obj(obj, (..., *path[i + 1:]), _current_depth)
-                if not isinstance(key, (int, slice)):
-                    return None
-                if not isinstance(obj, (list, tuple, LazyList)):
-                    if not traverse_string:
-                        return None
-                    obj = str(obj)
-                try:
-                    obj = obj[key]
-                except IndexError:
-                    return None
-        return obj
+    The keys in the path can be one of:
+        - `None`:           Return the current object.
+        - `str`/`int`:      Return `obj[key]`.
+        - `slice`:          Branch out and return all values in `obj[key]`.
+        - `Ellipsis`:       Branch out and return a list of all values.
+        - `tuple`/`list`:   Branch out and return a list of all matching values.
+                            Read as: `[traverse_obj(obj, branch) for branch in branches]`.
+        - `function`:       Branch out and return values filtered by the function.
+                            Read as: `[value for key, value in obj if function(key, value)]`.
+                            For `Sequence`s, `key` is the index of the value.
+        - `dict`            Transform the current object and return a matching dict.
+                            Read as: `{key: traverse_obj(obj, path) for key, path in dct.items()}`.
+
+        `tuple`, `list`, and `dict` all support nested paths and branches
+
+    @params paths           Paths which to traverse by.
+    @param default          Value to return if the paths do not match.
+    @param expected_type    If a `type`, only accept final values of this type.
+                            If any other callable, try to call the function on each result.
+    @param get_all          If `False`, return the first matching result, otherwise all matching ones.
+    @param casesense        If `False`, consider string dictionary keys as case insensitive.
+
+    The following are only meant to be used by YoutubeDL.prepare_outtmpl and are not part of the API
+
+    @param is_user_input    Whether the keys are generated from user input.
+                            If `True` strings get converted to `int`/`slice` if needed.
+    @param traverse_string  Whether to traverse into objects as strings.
+                            If `True`, any non-compatible object will first be
+                            converted into a string and then traversed into.
+
+
+    @returns                The result of the object traversal.
+                            If successful, `get_all=True`, and the path branches at least once,
+                            then a list of results is returned instead.
+    """
+    is_sequence = lambda x: isinstance(x, collections.abc.Sequence) and not isinstance(x, (str, bytes))
+    casefold = lambda k: k.casefold() if isinstance(k, str) else k
 
     if isinstance(expected_type, type):
         type_test = lambda val: val if isinstance(val, expected_type) else None
     else:
-        type_test = expected_type or IDENTITY
+        type_test = lambda val: try_call(expected_type or IDENTITY, args=(val,))
 
-    for path in path_list:
-        depth = 0
-        val = _traverse_obj(obj, path)
-        if val is not None:
-            if depth:
-                for _ in range(depth - 1):
-                    val = itertools.chain.from_iterable(v for v in val if v is not None)
-                val = [v for v in map(type_test, val) if v is not None]
-                if val:
-                    return val if get_all else val[0]
+    def apply_key(key, obj):
+        if obj is None:
+            return
+
+        elif key is None:
+            yield obj
+
+        elif isinstance(key, (list, tuple)):
+            for branch in key:
+                _, result = apply_path(obj, branch)
+                yield from result
+
+        elif key is ...:
+            if isinstance(obj, collections.abc.Mapping):
+                yield from obj.values()
+            elif is_sequence(obj):
+                yield from obj
+            elif traverse_string:
+                yield from str(obj)
+
+        elif callable(key):
+            if is_sequence(obj):
+                iter_obj = enumerate(obj)
+            elif isinstance(obj, collections.abc.Mapping):
+                iter_obj = obj.items()
+            elif traverse_string:
+                iter_obj = enumerate(str(obj))
             else:
-                val = type_test(val)
-                if val is not None:
-                    return val
+                return
+            yield from (v for k, v in iter_obj if try_call(key, args=(k, v)))
+
+        elif isinstance(key, dict):
+            iter_obj = ((k, _traverse_obj(obj, v)) for k, v in key.items())
+            yield {k: v if v is not None else default for k, v in iter_obj
+                   if v is not None or default is not None}
+
+        elif isinstance(obj, dict):
+            yield (obj.get(key) if casesense or (key in obj)
+                   else next((v for k, v in obj.items() if casefold(k) == key), None))
+
+        else:
+            if is_user_input:
+                key = (int_or_none(key) if ':' not in key
+                       else slice(*map(int_or_none, key.split(':'))))
+
+            if not isinstance(key, (int, slice)):
+                return
+
+            if not is_sequence(obj):
+                if not traverse_string:
+                    return
+                obj = str(obj)
+
+            with contextlib.suppress(IndexError):
+                yield obj[key]
+
+    def apply_path(start_obj, path):
+        objs = (start_obj,)
+        has_branched = False
+
+        for key in variadic(path):
+            if is_user_input and key == ':':
+                key = ...
+
+            if not casesense and isinstance(key, str):
+                key = key.casefold()
+
+            if key is ... or isinstance(key, (list, tuple)) or callable(key):
+                has_branched = True
+
+            key_func = functools.partial(apply_key, key)
+            objs = itertools.chain.from_iterable(map(key_func, objs))
+
+        return has_branched, objs
+
+    def _traverse_obj(obj, path):
+        has_branched, results = apply_path(obj, path)
+        results = LazyList(x for x in map(type_test, results) if x is not None)
+        if results:
+            return results.exhaust() if get_all and has_branched else results[0]
+
+    for path in paths:
+        result = _traverse_obj(obj, path)
+        if result is not None:
+            return result
+
     return default
 
 
