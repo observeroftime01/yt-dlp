@@ -418,6 +418,8 @@ def get_elements_text_and_html_by_attribute(attribute, value, html, *, tag=r'[\w
     Return the text (content) and the html (whole) of the tag with the specified
     attribute in the passed HTML document
     """
+    if not value:
+        return
 
     quote = '' if re.match(r'''[\s"'`=<>]''', value) else '?'
 
@@ -2004,9 +2006,10 @@ def system_identifier():
     with contextlib.suppress(OSError):  # We may not have access to the executable
         libc_ver = platform.libc_ver()
 
-    return 'Python %s (%s %s) - %s (%s%s)' % (
+    return 'Python %s (%s %s %s) - %s (%s%s)' % (
         platform.python_version(),
         python_implementation,
+        platform.machine(),
         platform.architecture()[0],
         platform.platform(),
         ssl.OPENSSL_VERSION,
@@ -2695,9 +2698,7 @@ def check_executable(exe, args=[]):
     return exe
 
 
-def _get_exe_version_output(exe, args, *, to_screen=None):
-    if to_screen:
-        to_screen(f'Checking exe version: {shell_quote([exe] + args)}')
+def _get_exe_version_output(exe, args):
     try:
         # STDIN should be redirected too. On UNIX-like systems, ffmpeg triggers
         # SIGTTOU if yt-dlp is run in the background.
@@ -2949,10 +2950,10 @@ class PlaylistEntries:
             self.is_exhausted = True
 
         requested_entries = info_dict.get('requested_entries')
-        self.is_incomplete = bool(requested_entries)
+        self.is_incomplete = requested_entries is not None
         if self.is_incomplete:
             assert self.is_exhausted
-            self._entries = [self.MissingEntry] * max(requested_entries)
+            self._entries = [self.MissingEntry] * max(requested_entries or [0])
             for i, entry in zip(requested_entries, entries):
                 self._entries[i - 1] = entry
         elif isinstance(entries, (list, PagedList, LazyList)):
@@ -3021,7 +3022,7 @@ class PlaylistEntries:
                     if not self.is_incomplete:
                         raise self.IndexError()
                 if entry is self.MissingEntry:
-                    raise EntryNotInPlaylist(f'Entry {i} cannot be found')
+                    raise EntryNotInPlaylist(f'Entry {i + 1} cannot be found')
                 return entry
         else:
             def get_entry(i):
