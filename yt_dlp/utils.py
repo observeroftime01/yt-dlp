@@ -76,7 +76,6 @@ compiled_regex_type = type(re.compile(''))
 def random_user_agent():
     _USER_AGENT_TPL = 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/%s Safari/537.36'
     _CHROME_VERSIONS = (
-        '103.0.5060.13',
         '103.0.5060.130',
         '103.0.5060.131',
         '103.0.5060.132',
@@ -110,10 +109,11 @@ def random_user_agent():
         '105.0.5195.97',
         '105.0.5195.98',
         '105.0.5195.99',
-        '105.0.5195.127',  # Current chrome version on Win10x64
+        '105.0.5195.127',
         '106.0.5196.0',
         '106.0.5196.1',
         '106.0.5197.0',
+        '107.0.5304.107',  # Current chrome version on Win10x64
     )
     return _USER_AGENT_TPL % random.choice(_CHROME_VERSIONS)
 
