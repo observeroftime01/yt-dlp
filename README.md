@@ -21,7 +21,7 @@ This fork provides daily builds, which are experimental in nature. Use them at y
 
 <!-- MANPAGE: BEGIN EXCLUDED SECTION -->
 * [NEW FEATURES](#new-features)
-    * [Differences in default behavior](#differences-in-default-behavior)
+    * [Differences in default behaviors](#differences-in-default-behavior)
 * [INSTALLATION](#installation)
     * [Detailed instructions](https://github.com/yt-dlp/yt-dlp/wiki/Installation)
     * [Update](#update)
