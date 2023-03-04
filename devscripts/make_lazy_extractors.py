@@ -40,7 +40,11 @@ def main():
 
     _ALL_CLASSES = get_all_ies()  # Must be before import
 
+    import yt_dlp.plugins
     from yt_dlp.extractor.common import InfoExtractor, SearchInfoExtractor
+
+    # Filter out plugins
+    _ALL_CLASSES = [cls for cls in _ALL_CLASSES if not cls.__module__.startswith(f'{yt_dlp.plugins.PACKAGE_NAME}.')]
 
     DummyInfoExtractor = type('InfoExtractor', (InfoExtractor,), {'IE_NAME': NO_ATTR})
     module_src = '\n'.join((
@@ -55,7 +59,7 @@ def main():
 
 
 def get_all_ies():
-    PLUGINS_DIRNAME = 'ytdlp_plugins'
+    PLUGINS_DIRNAME = 'yt_dlp_plugins'
     BLOCKED_DIRNAME = f'{PLUGINS_DIRNAME}_blocked'
     if os.path.exists(PLUGINS_DIRNAME):
         # os.rename cannot be used, e.g. in Docker. See https://github.com/yt-dlp/yt-dlp/pull/4958
