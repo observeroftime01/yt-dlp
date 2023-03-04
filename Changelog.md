@@ -4,6 +4,42 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2023.03.04.193015
+
+#### Core changes
+- [Merge branch 'yt-dlp-master'](https://github.com/yt-dlp/yt-dlp/commit/8ac167fc5b5f45c0de0c4d0beb0fb095e8d1f82e) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp-master'](https://github.com/yt-dlp/yt-dlp/commit/25d204ff89e8a7e0d86977190b455ab002333996) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/bcef2821317fc81e56141f5d122070cb6dd44613) by [pukkandan](https://github.com/pukkandan)
+- [Update release-nightly.yml](https://github.com/yt-dlp/yt-dlp/commit/5052800e20a2540fede333a9af6af2dd38bff147) by [pukkandan](https://github.com/pukkandan)
+- [Update utils.py](https://github.com/yt-dlp/yt-dlp/commit/1756a5f6b3b0c5ad63170d26481b32bc36b3c871) by [pukkandan](https://github.com/pukkandan)
+- [resolve merge conflicts](https://github.com/yt-dlp/yt-dlp/commit/ed88dd7a3632bda8e34fbd5f26c90972146bf1d1) by [pukkandan](https://github.com/pukkandan)
+- Merge branch 'master' of https: [//github.com/yt-dlp/yt-dlp into yt-dlp-master](https://github.com/yt-dlp/yt-dlp/commit/3e00bed9f05f4aef3ed14530fdd3008aeea650e3) by [pukkandan](https://github.com/pukkandan)
+
+#### Extractor changes
+- bilibili
+    - [Fix for downloading wrong subtitles](https://github.com/yt-dlp/yt-dlp/commit/8a83baaf218ab89e6e7faa76b7c7be3a2ec19e3a) ([#6358](https://github.com/yt-dlp/yt-dlp/issues/6358)) by [LXYan2333](https://github.com/LXYan2333)
+- ESPNcricinfo
+    - [Handle new URL pattern](https://github.com/yt-dlp/yt-dlp/commit/640c934823fc2d1ec77ec932566078014058635f) ([#6321](https://github.com/yt-dlp/yt-dlp/issues/6321)) by [venkata-krishnas](https://github.com/venkata-krishnas)
+- Prankcast
+    - [Fix tags](https://github.com/yt-dlp/yt-dlp/commit/ed4cc4ea793314c50ae3f82e98248c1de1c25694) ([#6316](https://github.com/yt-dlp/yt-dlp/issues/6316)) by [columndeeply](https://github.com/columndeeply)
+- rutube
+    - [Extract chapters from description](https://github.com/yt-dlp/yt-dlp/commit/22ccd5420b3eb0782776071f12cccd1fedaa1fd0) ([#6345](https://github.com/yt-dlp/yt-dlp/issues/6345)) by [mushbite](https://github.com/mushbite)
+- SportDeutschland
+    - [Rewrite extractor](https://github.com/yt-dlp/yt-dlp/commit/45db357289b4e1eec09093c8bc5446520378f426) by [pukkandan](https://github.com/pukkandan)
+- twitch
+    - [Update for GraphQL API changes](https://github.com/yt-dlp/yt-dlp/commit/4a6272c6d1bff89969b67cd22b26ebe6d7e72279) ([#6318](https://github.com/yt-dlp/yt-dlp/issues/6318)) by [elyse0](https://github.com/elyse0)
+- twitter
+    - [Fix retweet extraction](https://github.com/yt-dlp/yt-dlp/commit/cf605226521e99c89fc8dff26a319025810e63a0) ([#6422](https://github.com/yt-dlp/yt-dlp/issues/6422)) by [selfisekai](https://github.com/selfisekai)
+- xvideos
+    - quickies: [Add extractor](https://github.com/yt-dlp/yt-dlp/commit/283a0b5bc511f3b350eead4488158f50c20ec526) ([#6414](https://github.com/yt-dlp/yt-dlp/issues/6414)) by [Yakabuff](https://github.com/Yakabuff)
+
+#### Misc. changes
+- build
+    - [Fix publishing to PyPI and homebrew](https://github.com/yt-dlp/yt-dlp/commit/55676fe498345a389a2539d8baaba958d6d61c3e) by [bashonly](https://github.com/bashonly)
+    - [Only archive if `vars.ARCHIVE_REPO` is set](https://github.com/yt-dlp/yt-dlp/commit/08ff6d59f97b5f5f0128f6bf6fbef56fd836cc52) by [Grub4K](https://github.com/Grub4K)
+- devscripts
+    - `make_changelog`: [Stop at `Release ...` commit](https://github.com/yt-dlp/yt-dlp/commit/7accdd9845fe7ce9d0aa5a9d16faaa489c1294eb) by [pukkandan](https://github.com/pukkandan)
+
 ### 2023.03.03
 
 #### Important changes
