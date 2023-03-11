@@ -4,6 +4,62 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2023.03.11.235839
+
+#### Core changes
+- [Add public key to repository](https://github.com/yt-dlp/yt-dlp/commit/3d4b019584ba87d95e5ec141a057acd04994bc28) by [pukkandan](https://github.com/pukkandan)
+- [Made the warning about this being an unofficial version more clear, fixed a typo](https://github.com/yt-dlp/yt-dlp/commit/fdd4fd719e35733e4ac2a3bce3e05a863222c4af) by [pukkandan](https://github.com/pukkandan)
+- [Made the warning about this being an unofficial version more clear, f…](https://github.com/yt-dlp/yt-dlp/commit/3e646fc03719735d991d62d0cfa0f38dd7cb440c) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp-master'](https://github.com/yt-dlp/yt-dlp/commit/626f5aaf05b8474f6e414823d4e8175aa6f8061c) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #116 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/cd57ef5a7e848aad29791fb1c0c2b8536cdc1b04) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #117 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/8382368ca8ec830f5bcd10656630b2d44903642b) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #118 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/5d82c45884f87e6edca493270b0f65b34143c07e) by [pukkandan](https://github.com/pukkandan)
+- [Support loading info.json with a list at it's root](https://github.com/yt-dlp/yt-dlp/commit/ab1de9cb1e39cf421c2b7dc6756c6ff1955bb313) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/44d7eec6294cc4dc865a79df6f96dd71d4ed3af3) by [pukkandan](https://github.com/pukkandan)
+- [resolve conflicts](https://github.com/yt-dlp/yt-dlp/commit/cf75e3ecb9101718721922009d428b6cddcf9dc4) by [pukkandan](https://github.com/pukkandan)
+- Merge branch 'yt-dlp
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/3b598d1d4e61994282643aefadec07100186516e) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/92297b507904ac5f5465544138f5b2de33d6291a) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/f694c2bc9be8edbf36a1c5cbd4b246a5fe8c536f) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/925aed849f49bb6d64e0d132ebb90007725b6f19) by [pukkandan](https://github.com/pukkandan)
+- cookies
+    - [Defer extraction of v11 key from keyring](https://github.com/yt-dlp/yt-dlp/commit/9b7a48abd1b187eae1e3f6c9839c47d43ccec00b) by [Grub4K](https://github.com/Grub4K)
+- utils
+    - `write_string`: [Fix noconsole behavior](https://github.com/yt-dlp/yt-dlp/commit/3b479100df02e20dd949e046003ae96ddbfced57) by [Grub4K](https://github.com/Grub4K)
+
+#### Extractor changes
+- cbc
+    - gem: [Update `_VALID_URL`](https://github.com/yt-dlp/yt-dlp/commit/871c907454693940cb56906ed9ea49fcb7154829) ([#6499](https://github.com/yt-dlp/yt-dlp/issues/6499)) by [makeworld-the-better-one](https://github.com/makeworld-the-better-one)
+- chilloutzone
+    - [Fix extractor](https://github.com/yt-dlp/yt-dlp/commit/6f4fc5660f40f3458882a8f51601eae4af7be609) ([#6445](https://github.com/yt-dlp/yt-dlp/issues/6445)) by [bashonly](https://github.com/bashonly)
+- hidive
+    - [Fix login](https://github.com/yt-dlp/yt-dlp/commit/e6ab678e36c40ded0aae305bbb866cdab554d417) by [pukkandan](https://github.com/pukkandan)
+- iq
+    - [Set more language codes](https://github.com/yt-dlp/yt-dlp/commit/2d5cae9636714ff922d28c548c349d5f2b48f317) ([#6476](https://github.com/yt-dlp/yt-dlp/issues/6476)) by [D0LLYNH0](https://github.com/D0LLYNH0)
+- nubilesporn
+    - [Add extractor](https://github.com/yt-dlp/yt-dlp/commit/d4e6ef40772e0560a8ed33b844ef7549e86837be) ([#6231](https://github.com/yt-dlp/yt-dlp/issues/6231)) by [permunkle](https://github.com/permunkle)
+- opencast
+    - [Add ltitools to `_VALID_URL`](https://github.com/yt-dlp/yt-dlp/commit/3588be59cee429a0ab5c4ceb2f162298bb44147d) ([#6371](https://github.com/yt-dlp/yt-dlp/issues/6371)) by [C0D3D3V](https://github.com/C0D3D3V)
+    - [Fix format bug](https://github.com/yt-dlp/yt-dlp/commit/89dbf0848370deaa55af88c3593a2a264124caf5) ([#6512](https://github.com/yt-dlp/yt-dlp/issues/6512)) by [C0D3D3V](https://github.com/C0D3D3V)
+- rokfin
+    - [Re-construct manifest url](https://github.com/yt-dlp/yt-dlp/commit/7a6c8a0807941dd24fbf0d6172e811884f98e027) ([#6507](https://github.com/yt-dlp/yt-dlp/issues/6507)) by [vampirefrog](https://github.com/vampirefrog)
+- teamcoco
+    - [Fix extractor](https://github.com/yt-dlp/yt-dlp/commit/c459d45dd4d417fb80a52e1a04e607776a44baa4) ([#6437](https://github.com/yt-dlp/yt-dlp/issues/6437)) by [bashonly](https://github.com/bashonly)
+- twitch
+    - [Fix `is_live`](https://github.com/yt-dlp/yt-dlp/commit/0551511b45f7847f40e4314aa9e624e80d086539) ([#6500](https://github.com/yt-dlp/yt-dlp/issues/6500)) by [elyse0](https://github.com/elyse0)
+- youtube
+    - [Add client name to `format_note` when `-v`](https://github.com/yt-dlp/yt-dlp/commit/c795c39f27244cbce846067891827e4847036441) ([#6254](https://github.com/yt-dlp/yt-dlp/issues/6254)) by [Lesmiscore](https://github.com/Lesmiscore), [pukkandan](https://github.com/pukkandan)
+    - [Add extractor-arg `include_duplicate_formats`](https://github.com/yt-dlp/yt-dlp/commit/86cb922118b236306310a72657f70426c20e28bb) by [pukkandan](https://github.com/pukkandan)
+    - [Bypass throttling for `-f17`](https://github.com/yt-dlp/yt-dlp/commit/c9abebb851e6188cb34b9eb744c1863dd46af919) by [pukkandan](https://github.com/pukkandan)
+    - [Construct fragment list lazily](https://github.com/yt-dlp/yt-dlp/commit/2a23d92d9ec44a0168079e38bcf3d383e5c4c7bb) by [pukkandan](https://github.com/pukkandan)
+
+#### Downloader changes
+- curl
+    - [Fix progress reporting](https://github.com/yt-dlp/yt-dlp/commit/66aeaac9aa30b5959069ba84e53a5508232deb38) by [pukkandan](https://github.com/pukkandan)
+
+#### Postprocessor changes
+- [Fix chapters if duration is not extracted](https://github.com/yt-dlp/yt-dlp/commit/01ddec7e661bf90dc4c34e6924eb9d7629886cef) ([#6037](https://github.com/yt-dlp/yt-dlp/issues/6037)) by [bashonly](https://github.com/bashonly)
+
 ### 2023.03.04
 
 #### Extractor changes
