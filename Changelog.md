@@ -4,6 +4,143 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2023.03.27.021632
+
+#### Core changes
+- [Add public key to repository](https://github.com/yt-dlp/yt-dlp/commit/3d4b019584ba87d95e5ec141a057acd04994bc28) by [pukkandan](https://github.com/pukkandan)
+- [Delete public.key](https://github.com/yt-dlp/yt-dlp/commit/65f70bbcba74080ff6ef00c6c1a37f7b7044875a) by [pukkandan](https://github.com/pukkandan)
+- [Made the warning about this being an unofficial version more clear, fixed a typo](https://github.com/yt-dlp/yt-dlp/commit/fdd4fd719e35733e4ac2a3bce3e05a863222c4af) by [pukkandan](https://github.com/pukkandan)
+- [Made the warning about this being an unofficial version more clear, f…](https://github.com/yt-dlp/yt-dlp/commit/3e646fc03719735d991d62d0cfa0f38dd7cb440c) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp-master'](https://github.com/yt-dlp/yt-dlp/commit/626f5aaf05b8474f6e414823d4e8175aa6f8061c) by [pukkandan](https://github.com/pukkandan)
+- [Merge branch 'yt-dlp-master'](https://github.com/yt-dlp/yt-dlp/commit/0f26b189bd5b4d57b4355ab28ae0e50b8d10772e) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #116 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/cd57ef5a7e848aad29791fb1c0c2b8536cdc1b04) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #117 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/8382368ca8ec830f5bcd10656630b2d44903642b) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #118 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/5d82c45884f87e6edca493270b0f65b34143c07e) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #120 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/295d3bb9ee91b0037c6b2db14137a4331bdf0dbf) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #121 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/e0c07d03c96f8e6a6c745e76cff57b2b5d8baa6c) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #122 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/f99ad0b482e85acbed901e6d3eb765dff8a68813) by [pukkandan](https://github.com/pukkandan)
+- [Merge pull request #123 from yt-dlp/master](https://github.com/yt-dlp/yt-dlp/commit/984b429fbb80dea4a70e3fe44751518da9fb4b5a) by [pukkandan](https://github.com/pukkandan)
+- [Support loading info.json with a list at it's root](https://github.com/yt-dlp/yt-dlp/commit/ab1de9cb1e39cf421c2b7dc6756c6ff1955bb313) by [pukkandan](https://github.com/pukkandan)
+- [Try custom build of pyinstaller v5.9.0 for MacOS](https://github.com/yt-dlp/yt-dlp/commit/8a90381d0ea993e74d77e8bff4c70a10bdc1ca3f) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/44d7eec6294cc4dc865a79df6f96dd71d4ed3af3) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/1d60710dd13ea5cfb580c90e84c62558ed6ae91f) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/d0703e224b1dd9adaf9fde3536a496ea71013e22) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/55b89b895d07640d6279a1479aba64e930dafd24) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/fb5bcd3ceb2ccddef22f9c531867d942c255fc41) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/d63d174025074a504c45abebfd3ae5284d74d968) by [pukkandan](https://github.com/pukkandan)
+- [Update build.yml](https://github.com/yt-dlp/yt-dlp/commit/03943d74617d246269db381a7b0db2d7cc2de0e9) by [pukkandan](https://github.com/pukkandan)
+- [keep my changes](https://github.com/yt-dlp/yt-dlp/commit/0578665c0354c90255343a64dcdd40cd1d684088) by [pukkandan](https://github.com/pukkandan)
+- [minor formating fix](https://github.com/yt-dlp/yt-dlp/commit/e41c27c725a4da9b8806358cdec25cb6b1d9765c) by [pukkandan](https://github.com/pukkandan)
+- [resolve conflicts](https://github.com/yt-dlp/yt-dlp/commit/cf75e3ecb9101718721922009d428b6cddcf9dc4) by [pukkandan](https://github.com/pukkandan)
+- Merge branch 'yt-dlp
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/3b598d1d4e61994282643aefadec07100186516e) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/92297b507904ac5f5465544138f5b2de33d6291a) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/f694c2bc9be8edbf36a1c5cbd4b246a5fe8c536f) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/925aed849f49bb6d64e0d132ebb90007725b6f19) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/403ea7c60e364f9e6de962bef5fedfba3b9b9b7e) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/7f456a76ed59e5bf28c83edde49caa55b34f6fdb) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/b90695de2e0fb2f8d85855f1eddccd9d571c0bb1) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/6b3bfb2a965744343270b4ca2ca6eac1c7a6bcd9) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/457b98b1736ff48bde36f749f80bd5729d426ee3) by [pukkandan](https://github.com/pukkandan)
+- cookies
+    - [Defer extraction of v11 key from keyring](https://github.com/yt-dlp/yt-dlp/commit/9b7a48abd1b187eae1e3f6c9839c47d43ccec00b) by [Grub4K](https://github.com/Grub4K)
+- Cryptodome
+    - [Fix `__bool__`](https://github.com/yt-dlp/yt-dlp/commit/98ac902c4979e4529b166e873473bef42baa2e3e) by [pukkandan](https://github.com/pukkandan)
+- utils
+    - [Update Google Chrome version](https://github.com/yt-dlp/yt-dlp/commit/752a46d8635e6dc16e9ebdb43b43d707ea06dc95) by [pukkandan](https://github.com/pukkandan)
+    - `js_to_json`: [Implement template strings](https://github.com/yt-dlp/yt-dlp/commit/0898c5c8ccadfc404472456a7a7751b72afebadd) ([#6623](https://github.com/yt-dlp/yt-dlp/issues/6623)) by [Grub4K](https://github.com/Grub4K)
+    - `write_string`: [Fix noconsole behavior](https://github.com/yt-dlp/yt-dlp/commit/3b479100df02e20dd949e046003ae96ddbfced57) by [Grub4K](https://github.com/Grub4K)
+
+#### Extractor changes
+- [Do not exit early for unsuitable `url_result`](https://github.com/yt-dlp/yt-dlp/commit/baa922b5c74b10e3b86ff5e6cf6529b3aae8efab) by [pukkandan](https://github.com/pukkandan)
+- [Extract more metadata from ISM](https://github.com/yt-dlp/yt-dlp/commit/f68434cc74cfd3db01b266476a2eac8329fbb267) by [pukkandan](https://github.com/pukkandan)
+- bravotv
+    - [Fix extractor](https://github.com/yt-dlp/yt-dlp/commit/06966cb8966b9aa4f60ab9c44c182a057d4ca3a3) ([#6568](https://github.com/yt-dlp/yt-dlp/issues/6568)) by [bashonly](https://github.com/bashonly)
+- cbc
+    - gem: [Update `_VALID_URL`](https://github.com/yt-dlp/yt-dlp/commit/871c907454693940cb56906ed9ea49fcb7154829) ([#6499](https://github.com/yt-dlp/yt-dlp/issues/6499)) by [makeworld-the-better-one](https://github.com/makeworld-the-better-one)
+- cbs
+    - [Add `ParamountPressExpress` extractor](https://github.com/yt-dlp/yt-dlp/commit/44369c9afa996e14e9f466754481d878811b5b4a) ([#6604](https://github.com/yt-dlp/yt-dlp/issues/6604)) by [bashonly](https://github.com/bashonly)
+- chilloutzone
+    - [Fix extractor](https://github.com/yt-dlp/yt-dlp/commit/6f4fc5660f40f3458882a8f51601eae4af7be609) ([#6445](https://github.com/yt-dlp/yt-dlp/issues/6445)) by [bashonly](https://github.com/bashonly)
+- drtv
+    - [Fix radio page extraction](https://github.com/yt-dlp/yt-dlp/commit/9a06b7b1891b48cebbe275652ae8025a36d97d97) ([#6552](https://github.com/yt-dlp/yt-dlp/issues/6552)) by [viktor-enzell](https://github.com/viktor-enzell)
+- generic
+    - [Accept values for `fragment_query`, `variant_query`](https://github.com/yt-dlp/yt-dlp/commit/5cc0a8fd2e9fec50026fb92170b57993af939e4a) ([#6600](https://github.com/yt-dlp/yt-dlp/issues/6600)) by [bashonly](https://github.com/bashonly) (With fixes in [9bfe0d1](https://github.com/yt-dlp/yt-dlp/commit/9bfe0d15bd7dbdc6b0e6378fa9f5e2e289b2373b))
+    - [Add extractor-args `hls_key`, `variant_query`](https://github.com/yt-dlp/yt-dlp/commit/c2e0fc40a73dd85ab3920f977f579d475e66ef59) ([#6567](https://github.com/yt-dlp/yt-dlp/issues/6567)) by [bashonly](https://github.com/bashonly)
+- genius
+    - [Add support for articles](https://github.com/yt-dlp/yt-dlp/commit/460da07439718d9af1e3661da2a23e05a913a2e6) ([#6474](https://github.com/yt-dlp/yt-dlp/issues/6474)) by [bashonly](https://github.com/bashonly)
+- hidive
+    - [Fix login](https://github.com/yt-dlp/yt-dlp/commit/e6ab678e36c40ded0aae305bbb866cdab554d417) by [pukkandan](https://github.com/pukkandan)
+- hollywoodreporter
+    - [Add extractors](https://github.com/yt-dlp/yt-dlp/commit/6bdb64e2a2a6d504d8ce1dc830fbfb8a7f199c63) ([#6614](https://github.com/yt-dlp/yt-dlp/issues/6614)) by [bashonly](https://github.com/bashonly)
+- iq
+    - [Set more language codes](https://github.com/yt-dlp/yt-dlp/commit/2d5cae9636714ff922d28c548c349d5f2b48f317) ([#6476](https://github.com/yt-dlp/yt-dlp/issues/6476)) by [D0LLYNH0](https://github.com/D0LLYNH0)
+- iwara
+    - [Overhaul extractors](https://github.com/yt-dlp/yt-dlp/commit/c14af7a741931b364bab3d9546c0f4359f318f8c) ([#6557](https://github.com/yt-dlp/yt-dlp/issues/6557)) by [Lesmiscore](https://github.com/Lesmiscore)
+- jwplatform
+    - [Update `_extract_embed_urls`](https://github.com/yt-dlp/yt-dlp/commit/cf9fd52fabe71d6e7c30d3ea525029ffa561fc9c) ([#6383](https://github.com/yt-dlp/yt-dlp/issues/6383)) by [carusocr](https://github.com/carusocr)
+- LastFM
+    - [Rewrite playlist extraction](https://github.com/yt-dlp/yt-dlp/commit/026435714cb7c39613a0d7d2acd15d3823b78d94) ([#6379](https://github.com/yt-dlp/yt-dlp/issues/6379)) by [hatienl0i261299](https://github.com/hatienl0i261299), [pukkandan](https://github.com/pukkandan)
+- medaltv
+    - [Fix clips](https://github.com/yt-dlp/yt-dlp/commit/1e3c2b6ec28d7ab5e31341fa93c47b65be4fbff4) ([#6502](https://github.com/yt-dlp/yt-dlp/issues/6502)) by [xenova](https://github.com/xenova)
+- mediastream
+    - [Improve `WinSports` and embed extraction](https://github.com/yt-dlp/yt-dlp/commit/03025b6e105139d01cd415ddc51fd692957fd2ba) ([#6426](https://github.com/yt-dlp/yt-dlp/issues/6426)) by [bashonly](https://github.com/bashonly)
+- nbc
+    - [Fix `NBCStations` direct mp4 formats](https://github.com/yt-dlp/yt-dlp/commit/9be0fe1fd967f62cbf3c60bd14e1021a70abc147) ([#6637](https://github.com/yt-dlp/yt-dlp/issues/6637)) by [bashonly](https://github.com/bashonly)
+- nebula
+    - [Add `beta.nebula.tv`](https://github.com/yt-dlp/yt-dlp/commit/cbfe2e5cbe0f4649a91e323a82b8f5f774f36662) ([#6516](https://github.com/yt-dlp/yt-dlp/issues/6516)) by [unbeatable-101](https://github.com/unbeatable-101)
+- nubilesporn
+    - [Add extractor](https://github.com/yt-dlp/yt-dlp/commit/d4e6ef40772e0560a8ed33b844ef7549e86837be) ([#6231](https://github.com/yt-dlp/yt-dlp/issues/6231)) by [permunkle](https://github.com/permunkle)
+- opencast
+    - [Add ltitools to `_VALID_URL`](https://github.com/yt-dlp/yt-dlp/commit/3588be59cee429a0ab5c4ceb2f162298bb44147d) ([#6371](https://github.com/yt-dlp/yt-dlp/issues/6371)) by [C0D3D3V](https://github.com/C0D3D3V)
+    - [Fix format bug](https://github.com/yt-dlp/yt-dlp/commit/89dbf0848370deaa55af88c3593a2a264124caf5) ([#6512](https://github.com/yt-dlp/yt-dlp/issues/6512)) by [C0D3D3V](https://github.com/C0D3D3V)
+- Parler
+    - [Rewrite extractor](https://github.com/yt-dlp/yt-dlp/commit/80ea6d3dea8483cddd39fc89b5ee1fc06670c33c) ([#6446](https://github.com/yt-dlp/yt-dlp/issues/6446)) by [JChris246](https://github.com/JChris246)
+- pgatour
+    - [Add extractor](https://github.com/yt-dlp/yt-dlp/commit/3ae182ad89e1427ff7b1684d6a44ff93fa857a0c) ([#6613](https://github.com/yt-dlp/yt-dlp/issues/6613)) by [bashonly](https://github.com/bashonly)
+- rokfin
+    - [Re-construct manifest url](https://github.com/yt-dlp/yt-dlp/commit/7a6c8a0807941dd24fbf0d6172e811884f98e027) ([#6507](https://github.com/yt-dlp/yt-dlp/issues/6507)) by [vampirefrog](https://github.com/vampirefrog)
+- rozhlas
+    - [Extract manifest formats](https://github.com/yt-dlp/yt-dlp/commit/e4cf7741f9302b3faa092962f2895b55cb3d89bb) ([#6590](https://github.com/yt-dlp/yt-dlp/issues/6590)) by [bashonly](https://github.com/bashonly)
+- rumble
+    - [Detect timeline format](https://github.com/yt-dlp/yt-dlp/commit/78bc1868ff3352108ab2911033d1ac67a55f151e) by [pukkandan](https://github.com/pukkandan)
+    - [Fix videos without quality selection](https://github.com/yt-dlp/yt-dlp/commit/6994afc030d2a786d8032075ed71a14d7eac5a4f) by [pukkandan](https://github.com/pukkandan)
+- teamcoco
+    - [Fix extractor](https://github.com/yt-dlp/yt-dlp/commit/c459d45dd4d417fb80a52e1a04e607776a44baa4) ([#6437](https://github.com/yt-dlp/yt-dlp/issues/6437)) by [bashonly](https://github.com/bashonly)
+- telecaribe
+    - [Expand livestream support](https://github.com/yt-dlp/yt-dlp/commit/69b2f838d3d3e37dc17367ef64d978db1bea45cf) ([#6601](https://github.com/yt-dlp/yt-dlp/issues/6601)) by [bashonly](https://github.com/bashonly)
+- thesun
+    - [Update `_VALID_URL`](https://github.com/yt-dlp/yt-dlp/commit/0181b9a1b31db3fde943f7cd3fe9662f23bff292) ([#6522](https://github.com/yt-dlp/yt-dlp/issues/6522)) by [hatienl0i261299](https://github.com/hatienl0i261299)
+- tiktok
+    - [Fix mp3 formats](https://github.com/yt-dlp/yt-dlp/commit/8ceb07e870424c219dced8f4348729553f05c5cc) ([#6615](https://github.com/yt-dlp/yt-dlp/issues/6615)) by [bashonly](https://github.com/bashonly)
+    - [Improve `TikTokLive` extractor](https://github.com/yt-dlp/yt-dlp/commit/216bcb66d7dce0762767d751dad10650cb57da9d) ([#6520](https://github.com/yt-dlp/yt-dlp/issues/6520)) by [bashonly](https://github.com/bashonly)
+- triller
+    - [Support short URLs, detect removed videos](https://github.com/yt-dlp/yt-dlp/commit/33b737bedf8383c0d00d4e1d06a5273dcdfdb756) ([#6636](https://github.com/yt-dlp/yt-dlp/issues/6636)) by [bashonly](https://github.com/bashonly)
+- twitch
+    - [Fix `is_live`](https://github.com/yt-dlp/yt-dlp/commit/0551511b45f7847f40e4314aa9e624e80d086539) ([#6500](https://github.com/yt-dlp/yt-dlp/issues/6500)) by [elyse0](https://github.com/elyse0)
+- youtube
+    - [Add client name to `format_note` when `-v`](https://github.com/yt-dlp/yt-dlp/commit/c795c39f27244cbce846067891827e4847036441) ([#6254](https://github.com/yt-dlp/yt-dlp/issues/6254)) by [Lesmiscore](https://github.com/Lesmiscore), [pukkandan](https://github.com/pukkandan)
+    - [Add extractor-arg `include_duplicate_formats`](https://github.com/yt-dlp/yt-dlp/commit/86cb922118b236306310a72657f70426c20e28bb) by [pukkandan](https://github.com/pukkandan)
+    - [Bypass throttling for `-f17`](https://github.com/yt-dlp/yt-dlp/commit/c9abebb851e6188cb34b9eb744c1863dd46af919) by [pukkandan](https://github.com/pukkandan)
+    - [Construct fragment list lazily](https://github.com/yt-dlp/yt-dlp/commit/2a23d92d9ec44a0168079e38bcf3d383e5c4c7bb) by [pukkandan](https://github.com/pukkandan) (With fixes in [e389d17](https://github.com/yt-dlp/yt-dlp/commit/e389d172b6f42e4f332ae679dc48543fb7b9b61d))
+    - [Fix parsing `comment_count`](https://github.com/yt-dlp/yt-dlp/commit/071670cbeaa01ddf2cc20a95ae6da25f8f086431) ([#6523](https://github.com/yt-dlp/yt-dlp/issues/6523)) by [nick-cd](https://github.com/nick-cd)
+    - [Handle incomplete initial data from watch page](https://github.com/yt-dlp/yt-dlp/commit/607510b9f2f67bfe7d33d74031a5c1fe22a24862) ([#6510](https://github.com/yt-dlp/yt-dlp/issues/6510)) by [coletdjnz](https://github.com/coletdjnz)
+
+#### Downloader changes
+- curl
+    - [Fix progress reporting](https://github.com/yt-dlp/yt-dlp/commit/66aeaac9aa30b5959069ba84e53a5508232deb38) by [pukkandan](https://github.com/pukkandan)
+
+#### Postprocessor changes
+- [Fix chapters if duration is not extracted](https://github.com/yt-dlp/yt-dlp/commit/01ddec7e661bf90dc4c34e6924eb9d7629886cef) ([#6037](https://github.com/yt-dlp/yt-dlp/issues/6037)) by [bashonly](https://github.com/bashonly)
+
+#### Misc. changes
+- build
+    - [Enable MacOS builds again](https://github.com/yt-dlp/yt-dlp/commit/d6dec5a9b73bf31297c81eaa8670fcfb592a1407) by [pukkandan](https://github.com/pukkandan)
+    - [Pin `pyinstaller` version for MacOS](https://github.com/yt-dlp/yt-dlp/commit/427a8fafbb0e18c28d0ed7960be838d7b26b88d3) by [pukkandan](https://github.com/pukkandan)
+    - [update pyinstaller version](https://github.com/yt-dlp/yt-dlp/commit/c4a542a81363b827abf94c0df9a653906c68f581) by [pukkandan](https://github.com/pukkandan)
+- scripts
+    - [Update local build scripts to Pyinstaller version v.5.9.0](https://github.com/yt-dlp/yt-dlp/commit/a1929e60aba2de426fd5889766a085d0bcd66f1f) by [pukkandan](https://github.com/pukkandan)
+
 ### 2023.03.04
 
 #### Extractor changes
