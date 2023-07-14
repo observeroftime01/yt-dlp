@@ -4,6 +4,33 @@
 # To create a release, dispatch the https://github.com/yt-dlp/yt-dlp/actions/workflows/release.yml workflow on master
 -->
 
+### 2023.07.14
+
+#### Core changes
+- [Merge branch 'yt-dlp-master'](https://github.com/yt-dlp/yt-dlp/commit/0d0df25609e712b73406b2a4de27812177256d83) by [pukkandan](https://github.com/pukkandan)
+- [Revert 49296437a8e5fa91dacb5446e51ab588474c85d3](https://github.com/yt-dlp/yt-dlp/commit/b03fa7834579a01cc5fba48c0e73488a16683d48) by [pukkandan](https://github.com/pukkandan)
+- [resolve conflict in README.md](https://github.com/yt-dlp/yt-dlp/commit/88aa3ad6a38346553a2a619844092fcd09452191) by [pukkandan](https://github.com/pukkandan)
+- Merge branch 'yt-dlp
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/5a38ea2f901052ee278316b8c187e28afe86c722) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/039e4bf6a0006c1f204a2e70c1aeffb9e6b9165c) by [pukkandan](https://github.com/pukkandan)
+    - [master' into master](https://github.com/yt-dlp/yt-dlp/commit/9290c2a63ac2168cb795483f6f54c58e3ee1811f) by [pukkandan](https://github.com/pukkandan)
+- **utils**: `clean_podcast_url`: [Handle more trackers](https://github.com/yt-dlp/yt-dlp/commit/2af4eeb77246b8183aae75a0a8d19f18c08115b2) ([#7556](https://github.com/yt-dlp/yt-dlp/issues/7556)) by [bashonly](https://github.com/bashonly), [mabdelfattah](https://github.com/mabdelfattah)
+
+#### Extractor changes
+- **BiliBiliBangumi**: [Fix extractors](https://github.com/yt-dlp/yt-dlp/commit/bdd0b75e3f41ff35440eda6d395008beef19ef2f) ([#7337](https://github.com/yt-dlp/yt-dlp/issues/7337)) by [GD-Slime](https://github.com/GD-Slime)
+- **piapro**: [Support `/content` URL](https://github.com/yt-dlp/yt-dlp/commit/1bcb9fe8715b1f288efc322be3de409ee0597080) ([#7592](https://github.com/yt-dlp/yt-dlp/issues/7592)) by [FinnRG](https://github.com/FinnRG)
+- **streamanity**: [Remove](https://github.com/yt-dlp/yt-dlp/commit/2cfe221fbbe46faa3f46552c08d947a51f424903) ([#7571](https://github.com/yt-dlp/yt-dlp/issues/7571)) by [alerikaisattera](https://github.com/alerikaisattera)
+- **twitter**: [Fix GraphQL and legacy API](https://github.com/yt-dlp/yt-dlp/commit/92315c03774cfabb3a921884326beb4b981f786b) ([#7516](https://github.com/yt-dlp/yt-dlp/issues/7516)) by [bashonly](https://github.com/bashonly)
+- **vrt**: [Update token signing key](https://github.com/yt-dlp/yt-dlp/commit/325191d0c9bf3fe257b8a7c2eb95080f44f6ddfc) ([#7519](https://github.com/yt-dlp/yt-dlp/issues/7519)) by [Zprokkel](https://github.com/Zprokkel)
+
+#### Postprocessor changes
+- **EmbedThumbnail**: [Support `m4v`](https://github.com/yt-dlp/yt-dlp/commit/8a4cd12c8f8e93292e3e95200b9d17a3af39624c) ([#7583](https://github.com/yt-dlp/yt-dlp/issues/7583)) by [Neurognostic](https://github.com/Neurognostic)
+
+#### Misc. changes
+- **build**
+    - [Downgrade win32 pyinstaller to v5.12.0](https://github.com/yt-dlp/yt-dlp/commit/b7990b8e3273a05e061ba3108f3e57d918e7b3dc) by [pukkandan](https://github.com/pukkandan)
+    - [Update to pyinstaller v5.13.0](https://github.com/yt-dlp/yt-dlp/commit/28611e3af20b8abd6cff4b2b9c56871964457b7f) by [pukkandan](https://github.com/pukkandan)
+
 ### 2023.07.06
 
 #### Important changes
