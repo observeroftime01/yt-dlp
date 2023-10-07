@@ -6,6 +6,11 @@
 
 ### 2023.10.07
 
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/d89ebb5468336889e27aa522de36ca448fab7f8f) by [pukkandan](https://github.com/pukkandan)
+
+### 2023.10.07
+
 #### Extractor changes
 - **abc.net.au**: iview: [Improve `episode` extraction](https://github.com/yt-dlp/yt-dlp/commit/a9efb4b8d74f3583450ffda0ee57259a47d39c70) ([#8201](https://github.com/yt-dlp/yt-dlp/issues/8201)) by [xofe](https://github.com/xofe)
 - **erocast**: [Add extractor](https://github.com/yt-dlp/yt-dlp/commit/47c598783c98c179e04dd12c2a3fee0f3dc53087) ([#8264](https://github.com/yt-dlp/yt-dlp/issues/8264)) by [madewokherd](https://github.com/madewokherd)
