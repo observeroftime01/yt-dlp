@@ -6,6 +6,12 @@
 
 ### 2024.07.25
 
+#### Core changes
+- [Resolve merge conflicts update to pyinstaller v6.9.0](https://github.com/yt-dlp/yt-dlp/commit/fd60e5e5dcda97cb7d2201ca913095f0ecaf0c7b) by [pukkandan](https://github.com/pukkandan)
+- [resolve conflicts](https://github.com/yt-dlp/yt-dlp/commit/b2a385dab3554a6d716b2eede113f4e8fde52101) by [pukkandan](https://github.com/pukkandan)
+
+### 2024.07.25
+
 #### Extractor changes
 - **abematv**: [Adapt key retrieval to request handler framework](https://github.com/yt-dlp/yt-dlp/commit/a3bab4752a2b3d56e5a59b4e0411bb8f695c010b) ([#10491](https://github.com/yt-dlp/yt-dlp/issues/10491)) by [bashonly](https://github.com/bashonly)
 - **facebook**: [Fix extraction](https://github.com/yt-dlp/yt-dlp/commit/1a34a802f44a1dab8f642c79c3cc810e21541d3b) ([#10531](https://github.com/yt-dlp/yt-dlp/issues/10531)) by [bashonly](https://github.com/bashonly)
