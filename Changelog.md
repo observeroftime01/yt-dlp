@@ -6,6 +6,11 @@
 
 ### 2024.11.04
 
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/0ddc6bc3531b37991ae61afa7bf7c71a7c7efa78) by [pukkandan](https://github.com/pukkandan)
+
+### 2024.11.04
+
 #### Important changes
 - **Beginning with this release, yt-dlp's Python dependencies *must* be installed using the `default` group**
 If you're installing yt-dlp with pip/pipx or requiring yt-dlp in your own Python project, you'll need to specify `yt-dlp[default]` if you want to also install yt-dlp's optional dependencies (which were previously included by default). [Read more](https://github.com/yt-dlp/yt-dlp/pull/11255)
