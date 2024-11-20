@@ -6,6 +6,11 @@
 
 ### 2024.11.18
 
+#### Core changes
+- [Merge branch 'yt-dlp:master' into master](https://github.com/yt-dlp/yt-dlp/commit/4fa864aec03373ad2d421ff7cf093c3a91e4c2ab) by [pukkandan](https://github.com/pukkandan)
+
+### 2024.11.18
+
 #### Important changes
 - **Login with OAuth is no longer supported for YouTube**
 Due to a change made by the site, yt-dlp is longer able to support OAuth login for YouTube. [Read more](https://github.com/yt-dlp/yt-dlp/issues/11462#issuecomment-2471703090)

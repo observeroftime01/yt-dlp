@@ -2,14 +2,14 @@
 
 __version__ = '2024.11.18'
 
-RELEASE_GIT_HEAD = '7ea2787920cccc6b8ea30791993d114fbd564434'
+RELEASE_GIT_HEAD = '4fa864aec03373ad2d421ff7cf093c3a91e4c2ab'
 
 VARIANT = None
 
 UPDATE_HINT = None
 
-CHANNEL = 'stable'
+CHANNEL = 'observeroftime01/yt-dlp'
 
-ORIGIN = 'yt-dlp/yt-dlp'
+ORIGIN = 'observeroftime01/yt-dlp'
 
 _pkg_version = '2024.11.18'
